@@ -1,0 +1,34 @@
+plugins {
+    // Apply the Kotlin JVM plugin to add support for Kotlin.
+    id("org.jetbrains.kotlin.jvm") version "1.4.10"
+    id("base")
+    id("idea")
+    id("application")
+}
+
+run {
+    mainClassName = 'com.course.MainKt'
+    standardInput = System.in
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    // Align versions of all Kotlin components
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+
+    implementation("org.postgresql:postgresql:42.2.11")
+    implementation("org.slf4j:slf4j-api:1.7.30")
+    implementation("org.slf4j:slf4j-simple:1.6.1")
+
+    // Use the Kotlin JDK 8 standard library.
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("org.jetbrains.exposed:exposed-core:0.24.1")
+    implementation("org.jetbrains.exposed:exposed-dao:0.24.1")
+    implementation("org.jetbrains.exposed:exposed-jdbc:0.24.1")
+    implementation("org.jetbrains.exposed:exposed-java-time:0.22.1")
+}
